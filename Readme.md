@@ -1,30 +1,32 @@
-# Android Basisapplikation
+# U09 | Kamera und Galerie
 
-Dieses Repository dient als Vorlage für die Übungsaufgaben des Android-Kurses. Im `master`-Branch des
-Repositorys befindet sich das Starterpaket, das als Ausgangslage für die Bearbeitung durch die Studierenden
-dient. Die Aufgabenbeschreibung wird in der `Readme.md`-Datei verfasst. Zugehörige Dateien, z.B. Bilder
-oder Videos, werden im Ordner `/docs` abgelegt. Der fertige Lösungsvorschlag wird auf Basis des Starterpakets
-in einem separaten Branch `solution` gepflegt. **Dieser Abschnitt wird durch eine kurze Beschreibung der
-jeweiligen Aufgabe ersetzt. Unter der Kurzbeschreibung wird ein aussagekräftiger Screenshot der zu
-entwickelnden Anwendung platziert.**
+![Cover für die neunte Übungsaufgabe](./docs/cover.png)
 
 ## Downloads
 
-- [Download des Starterpakets](Link zum direkten Download des Master-Branch)
-- [Download des Lösungsvorschlag](Link zum direkten Download des Solution-Branch)
+- [Download des Starterpakets](https://github.com/Android-Regensburg/U09-Kamera-und-Galerie/archive/master.zip)
+- [Download des Lösungsvorschlag](https://github.com/Android-Regensburg/U09-Kamera-und-Galerie/archive/solution.zip)
 
-## Aufgabenbeschreibung
+## Aufgabe
 
-Hier folgt die Aufgabenbeschreibung auf Basis des ursprünglichen Handouts.
+Im Rahmen dieses Übungsblattes ist eine App (`ImageTaker`) zu entwickeln, mit der sie Bilder machen können. Als Quelle kann der Nutzer ein Bild mit der Kamera des Gerätes schießen oder ein auf dem Gerät gespeichertes auswählen und auf dem Screen darstellen. In beiden Fällen sollte diese Funktionalität nicht selbst implementiert werden. Stattdessen wird die (jeweils auf dem System installierte) Kamera- bzw. Galerie-App von Android ein Bild an die eigene App liefern. (Fast) Jedes Android-Gerät hat eine oder mehrere Apps für diese Zwecke bereits vorinstalliert.
 
----
+![Screenshot der ImageTaker-App](./docs/screenshot-1.png "Startbildschirm der App")
 
-## Hinweise zur Arbeit mit dieser Vorlage
+## Hinweise
 
-1. Für jede Aufgabe wird ein neues Repository in der Organisation `Android-Regensburg` erstellt. Grundlage (*Template*) ist [dieses Repository](https://github.com/Android-Regensburg/Template-Uebungsaufgaben).
-2. Die Repositorys werden einheitlich nach dem Muster `U` + laufende Nummer + `-` + Name der Übung benannt.
-3. Im Master-Branch werden Aufgabenbeschreibung (*Readme*) und Starter-Code ergänzt.
-4. Eingefügte Aufgabenbeschreibung und Starter-Code werden *committet* (Commit-Message: *Initialer Commit mit Aufgabenbeschreibung und Starterpaket*).
-5. Auf Basis des Master-Branch wird eine neue Branch `solution` erstellt. Dort wird der bestehende Code mit dem Lösungsvorschlag ergänzt und *comittet* (Commit-Message: *Lösungsvorschlag ergänzt*).
+* Verwenden sie die Vorlesung (vor allem VL8) sowie die Android Dokumentation, um die Features zu implementieren (https://developer.android.com/training/camera/photobasics).
+* Versuchen sie auch weitere Quellen aus dem Internet hinzuzuziehen (z.B. Stackoverflow), um sich über die Funktionalitäten zu informieren und Probleme zu lösen.
+* Vergessen sie nicht die notwendigen Berechtigungen im Android Manifest anzugeben.
+* Versuchen sie Schritt für Schritt die Teilprobleme zu lösen und in einzelne Methoden auszulagern. Fangen sie damit an zuerst ein Thumbnail ihres geschossenen Fotos darzustellen und erweitern sie Schritt für Schritt die zu implementierenden Features.
 
-Da Code und Repository ggf. auch den Studierenden zugänglich gemacht werden, werden Commit-Messages, Issues und In-Code-Kommentare auf Deutsch verfasst.
+## Fehlerbehebung
+
+Die Vielfalt der Gerätelandschaft von Android bedingt, dass es immer wieder zu unerwarteten, hardwarebedingten Engpässen kommen kann. Als Programmierer sind diese einzukalkulieren. Zur Vereinfachung dieser Aufgabe wurde ein mögliches Problem, das beim Erzeugen der Bitmaps auftreten kann, absichtlich ignoriert.
+Sollte Ihre App beim Dekodieren der Bilder in Bitmaps via `BitmapFactory` mit Hinweis auf eine Speicherüberschreitung abstürzen, kann dieses nicht in Originalgröße (Fotos können einige MB groß werden) geladen und dann verkleinert gerendert werden. Beim Umgang mit Bildern im UI kann dieses Problem in verschiedenen Formen zutage treten. Einen guten Überblick über best practices und mögliche Fallstricke bieten diese Quellen von Google:
+* Überblick: http://developer.android.com/training/displaying-bitmaps/index.html
+* Lösungsansatz für obiges Problem: http://developer.android.com/training/displaying-bitmaps/load-bitmap.html  
+
+## Anhang
+### Screenshots
+![Screenshot der Kamera-App](./docs/screenshot-2.png "Kameraansicht")
