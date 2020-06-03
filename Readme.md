@@ -34,7 +34,8 @@ Wenn Sie einen Emulator verwenden, wird Ihre Galerie vermutlich leer sein. Um di
 
 ## Hinweise
 
-* Verwenden Sie die Vorlesung (vor allem VL8), sowie die Android Dokumentation, um die gewünschten Features zu implementieren. Eine gute Anlaufstelle ist dabei [**dieser Guide zur Einbindung der Kamera**](https://developer.android.com/training/camera/photobasics).   
+* Verwenden Sie die Vorlesung (vor allem VL8), sowie die Android Dokumentation, um die gewünschten Features zu implementieren. Eine gute Anlaufstelle ist dabei dieser Guide zur Einbindung der Kamera:  
+https://developer.android.com/training/camera/photobasics   
 * Vergessen Sie nicht, die notwendigen Berechtigungen im Android Manifest anzugeben.  
 * Versuchen Sie Schritt für Schritt die Teilprobleme zu lösen und in einzelne Methoden auszulagern. Fangen Sie damit an zuerst ein Thumbnail ihres geschossenen Fotos darzustellen und erweitern sie Schritt für Schritt die zu implementierenden Features.  
   
@@ -50,7 +51,8 @@ Intent loadImageIntent = new Intent(Intent.ACTION_PICK,
   MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
 ```  
 * Im verlinkten Guide finden Sie eine Anleitung, wie Sie einen `FileProvider` im Manifest registrieren. Die dabei verwendete Support-Library ist nicht mehr ganz aktuell.  
-Statt `android.support.v4.content.FileProvider` können Sie `androidx.core.content.FileProvider` für das Attribut `android:name` angeben.  
+Statt `android.support.v4.content.FileProvider` können Sie  
+`androidx.core.content.FileProvider` für das Attribut `android:name` angeben.  
 
 * Die Vielfalt der Gerätelandschaft von Android bedingt, dass es immer wieder zu unerwarteten, hardwarebedingten Engpässen kommen kann. `Bitmap`-Objekte werden zunächst (unabhängig von ihrer letztendlichen Darstellungsgröße in der App) in ihrer Originalgröße im Speicher gehalten. Auch wenn nicht unbedingt damit zu rechnen ist, dass es im Kontext dieser Übungsaufgabe zu einem Absturz aufgrund einer Speicherüberschreitung kommt, da immer nur ein Bild dargestellt wird, können Sie sich bereits im Rahmen dieser Aufgabe daran versuchen, die Gefahr einer Speicherüberschreitung zu minimieren. Suchen Sie dazu nach einem Ansatz, der es Ihnen erlaubt, Bitmaps so zu erzeugen, dass die Größe bereits auf die Größe des `ImageView`-Elements skaliert ist.  
 
