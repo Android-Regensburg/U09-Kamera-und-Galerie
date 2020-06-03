@@ -1,5 +1,5 @@
 ---
-title: Bundesligatabelle
+title: Kamera-und-Galerie
 author: Zuletzt bearbeitet von Severin Will
 documentclass: scrartcl
 classoption:
