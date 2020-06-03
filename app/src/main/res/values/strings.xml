@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ImageTaker</string>
+    <string name="camera_button_text">From Camera</string>
+    <string name="gallery_button_text">From Gallery</string>
 </resources>
