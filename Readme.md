@@ -47,7 +47,7 @@ Für die Bearbeitung dieser Aufgabe wurde nichts vorgegeben, das Starterpake ent
 ```
 Intent loadImageIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
 ```  
-* Im verlinkten Guide finden Sie eine Anleitung, wie Sie einen `FileProvider` im Manifest registrieren. Die dabei verwendete Support-Library ist nicht mehr ganz aktuell. Statt `"android.support.v4.content.FileProvider"` können Sie `"androidx.core.content.FileProvider"` für das Attribut `android:name` angeben.  
+* Im verlinkten Guide finden Sie eine Anleitung, wie Sie einen `FileProvider` im Manifest registrieren. Die dabei verwendete Support-Library ist nicht mehr ganz aktuell. Statt `android.support.v4.content.FileProvider` können Sie `androidx.core.content.FileProvider` für das Attribut `android:name` angeben.  
 
 * Die Vielfalt der Gerätelandschaft von Android bedingt, dass es immer wieder zu unerwarteten, hardwarebedingten Engpässen kommen kann. `Bitmap`-Objekte werden zunächst (unabhängig von ihrer letztendlichen Darstellungsgröße in der App) in ihrer Originalgröße im Speicher gehalten. Auch wenn nicht unbedingt damit zu rechnen ist, dass es im Kontext dieser Übungsaufgabe zu einem Absturz aufgrund einer Speicherüberschreitung kommt, da immer nur ein Bild dargestellt wird, können Sie sich bereits im Rahmen dieser Aufgabe daran versuchen, die Gefahr einer Speicherüberschreitung zu minimieren. Suchen Sie dazu nach einem Ansatz, der es Ihnen erlaubt, Bitmaps so zu erzeugen, dass die Größe bereits auf die Größe des `ImageView`-Elements skaliert ist.  
 
