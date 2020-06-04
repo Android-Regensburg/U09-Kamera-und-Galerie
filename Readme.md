@@ -29,7 +29,7 @@ header-includes: |
 ## Aufgabe
 
 Im Rahmen dieses Übungsblattes ist eine App (`ImageTaker`) zu entwickeln, in der Sie Bilder anzeigen lassen können. Das darzustellende Bild soll dabei entweder frisch mit der Kamera des Gerätes aufgenommen werden oder es soll ein bereits auf dem Gerät gespeichertes Bild ausgewählt werden. Das Aufnehmen und Verwalten von Bildern soll dabei nicht selbst implementiert werden. Stattdessen wird die (jeweils auf dem System installierte) Kamera- bzw. Galerie-App von Android ein Bild an die eigene App liefern. (Fast) Jedes Android-Gerät hat eine oder mehrere Apps für diese Zwecke bereits vorinstalliert.  
-Sie können Ihre App natürlich auch auf dem Emulator testen. Sofern Sie die Kamerafunktionalität bei der Erstellung Ihres AVDs deaktiviert haben, haben Sie die Möglichkeit Bilder in einer virtuellen Szene aufzunehmen (vgl. Screenshot-2).  
+Sie können Ihre App natürlich auch auf dem Emulator testen. Sofern Sie die Kamerafunktionalität bei der Erstellung Ihres AVDs nicht deaktiviert haben, haben Sie die Möglichkeit Bilder in einer virtuellen Szene aufzunehmen (vgl. Screenshot-2).  
 Wenn Sie einen Emulator verwenden, wird Ihre Galerie vermutlich leer sein. Um die Verwendung der Galerie später testen zu können, bietet es sich an, die Kamera-App Ihres emulierten Gerätes manuell zu starten und ein paar Bilder aufzunehmen. Alternativ können Sie die Kamerafunktion Ihrer ImageTaker-App so erweitern, dass die aufgenommen Bilder nicht nur in Ihrer App angezeigt werden, sondern auch zur Galerie hinzugefügt werden. 
 
 ## Hinweise
