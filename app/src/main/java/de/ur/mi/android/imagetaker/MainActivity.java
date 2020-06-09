@@ -93,6 +93,14 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(loadImageIntent, REQUEST_LOAD_IMAGE);
     }
 
+    /*
+    Verarbeitung der Ergebnisse der zuvor gestellten Anfrage. Anhand des request codes wird die Art der Anfrage unterschieden,
+    durch den result code wird jeweils der Erfolg der Anfrage überprüft.
+    Anders als im Fall einer Anfrage an die Galerie, wird für die Erstellung des Bitmap-Objekts bei
+    der Nutzung der Kamera nicht auf die Daten zugegriffen, die durch das Intent-Objekt an die Methode übergeben werden.
+    Stattdessen wird über den entsprechenden Dateipfad auf die Bilddatei zugegriffen, die vor Aussenden
+    des Kamera-Intents erstellt wurde.
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -113,20 +121,20 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /*
+    Erzeugung eines BitmapFactory.Options-Objekts, in dem der Skalierungsfaktor für die spätere Erstellung eines Bitmap-Onjekts gesetzt wird.
+    Normalerweise werden Bitmaps in ihrer Originalgröße im Speicher gehalten, auch wenn sie im UI letztendlich kleiner angezeigt werden.
+    Um den Speicherverbrauch nur os hoch wie nötig zu halten, werden die Bitmap-Objekte im weiteren Verlauf mithilfe des hier festgelegten
+    Sklaierungsfaktors in einer Größe erzeugt, die der letztendlichen Darstellungsgröße in der App entspricht.
+     */
     private BitmapFactory.Options getBitmapOptions() {
-        // Bestimmen der Dimensionen des Views
         int targetW = imageView.getWidth();
         int targetH = imageView.getHeight();
-
         BitmapFactory.Options bmOptions = new BitmapFactory.Options();
         bmOptions.inJustDecodeBounds = true;
         int photoW = bmOptions.outWidth;
         int photoH = bmOptions.outHeight;
-
-        // Bestimmen des Skalierungsfaktors
         int scaleFactor = Math.min(photoW / targetW, photoH / targetH);
-
-        // Dekodierung der Bilddatei zu einem Bitmap, dass den Imageview ausfüllt
         bmOptions.inJustDecodeBounds = false;
         bmOptions.inSampleSize = scaleFactor;
         return bmOptions;
